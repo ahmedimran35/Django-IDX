@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+This is Our About Us Page
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl font-bold text-gray-800 mb-6">About Us</h1>
+            <p class="text-gray-600 mb-8">
+                We are a team of passionate individuals dedicated to providing exceptional products and services. Our company was founded with the goal of making a positive impact in the lives of our customers and the communities we serve.
+            </p>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
+            <p class="text-gray-600 mb-8">
+                Our mission is to continuously innovate and deliver high-quality solutions that exceed our customers' expectations. We strive to foster a culture of excellence, integrity, and customer satisfaction.
+            </p>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Values</h2>
+            <ul class="list-disc list-inside text-gray-600 mb-8">
+                <li>Customer-centric approach</li>
+                <li>Continuous improvement</li>
+                <li>Ethical business practices</li>
+                <li>Teamwork and collaboration</li>
+                <li>Environmental responsibility</li>
+            </ul>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Team</h2>
+            <p class="text-gray-600 mb-8">
+                Our team is composed of experienced professionals who bring diverse backgrounds and expertise to the table. We foster an environment of learning, creativity, and personal growth, allowing our team members to reach their full potential.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+

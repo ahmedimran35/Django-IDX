@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+    {% block title %} Chai details page 
+    {% endblock %}
+
+    {% block content %}
+    <h1 class="text-center text-red-500 bg-gray-100 m-6">Chai details page</h1>
+
+
+ <h3 class="text-center text-3xl">{{chai.name}}</h3>
+ <h3 class="text-center text-xl">{{chai.description}}</h3>
+ <img class=" mx-auto relative h-80 flex items-center justify-center p-4 " src="{{ chai.image.url }}" alt="{{ chai.name }}">
+
+    
+
+
+    {% endblock %}

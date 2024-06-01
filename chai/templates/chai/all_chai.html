@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+    {% block title %} All typer of chai page 
+    {% endblock %}
+
+    {% block content %}
+    <h1 class="text-center text-red-500 bg-gray-100 m-6">All typer of chai page</h1>
+    
+    <div class="grid grid-cols-4 gap-10 m-4  pt-6">
+    {% for chai in chais %}
+    <div class="bg-blue-100 p-4 rounded-md">
+        <img class="rounded h-48" src="{{ chai.image.url }}" alt="{{ chai.name }}">
+        <h3 class="text-center text-red-500 bg-gray-100 mt-2">{{ chai.name }}</h3>
+        <p>{{ chai.description }}</p>
+        <a href=" {% url 'chai_detail' chai.id %}" target="_blank"> 
+            <button type="button" class="bg-red-500 text-white px-4  rounded-md">Buy Now</button>
+        </a>
+        
+    </div>
+    {% endfor %}
+
+</div>
+
+
+    {% endblock %}

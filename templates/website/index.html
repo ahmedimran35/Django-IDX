@@ -1,0 +1,67 @@
+ {% extends 'layout.html' %}
+
+{% block title %}
+This is Our homepage title
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-16">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to My Landing Page</h1>
+      <p class="text-lg text-gray-600">A brief description of your product or service goes here.</p>
+    </header>
+
+    <main>
+      <section class="mb-16">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Feature Section</h2>
+          <p class="text-gray-600 mb-8">Explain your product or service features here.</p>
+          <div class="flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/3 px-4 mb-8">
+              <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Feature 1</h3>
+                <p class="text-gray-600">Describe the first feature here.</p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+              <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Feature 2</h3>
+                <p class="text-gray-600">Describe the second feature here.</p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+              <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Feature 3</h3>
+                <p class="text-gray-600">Describe the third feature here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Call to Action</h2>
+          <p class="text-gray-600 mb-8">Encourage users to take action here.</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Call to Action Button
+          </a>
+        </div>
+      </section>
+    </main>
+
+    
+  </div>
+</body>
+</html>
+{% endblock %}
+
