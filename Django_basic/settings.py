@@ -44,6 +44,7 @@ INSTALLED_APPS = [
    # 'corsheaders'
     'chai',
    # 'corsheaderschai'
+   
 ]
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
@@ -52,6 +53,8 @@ INTERNAL_IPS = [
 #NPM_BIN_PATH = '/usr/local/bin/npm'
 ALLOWED_HOSTS = ['8000-idx-django-prac-1716884955820.cluster-fu5knmr55rd44vy7k7pxk74ams.cloudworkstations.dev', 'localhost', '127.0.0.1','.vercel.app']
 CSRF_TRUSTED_ORIGINS = ['https://8000-idx-django-prac-1716884955820.cluster-fu5knmr55rd44vy7k7pxk74ams.cloudworkstations.dev']
+
+
 
 
 
@@ -66,6 +69,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 
     # 'django_browser_reload.middleware.BrowserReloadMiddleware'
+    
 ]
 
 

@@ -13,7 +13,7 @@
         <h3 class="text-center text-red-500 bg-gray-100 mt-2">{{ chai.name }}</h3>
         <p>{{ chai.description }}</p>
         <a href=" {% url 'chai_detail' chai.id %}" target="_blank"> 
-            <button type="button" class="bg-red-500 text-white px-4  rounded-md">Buy Now</button>
+            <button type="button" class="bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-purple-600 text-white mt-2 pb-1 px-6 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">Buy Now</button>
         </a>
     </div>
     {% endfor %}
