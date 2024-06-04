@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Chaivarity
 from django.shortcuts import get_object_or_404
 
+
 # Create your views here.
 def all_chai(request):
     chais=Chaivarity.objects.all()
