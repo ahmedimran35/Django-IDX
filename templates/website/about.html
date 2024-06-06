@@ -11,34 +11,58 @@ This is Our About Us Page
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto py-16 px-6">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-4xl font-bold text-gray-800 mb-6">About Us</h1>
-            <p class="text-gray-600 mb-8">
+<body class="bg-white text-black">
+
+    <!-- Container for the content -->
+    <div class="container mx-auto px-8 py-12 ">
+
+        <!-- Header section -->
+        <header class="text-left mb-12">
+            <h1 class="text-5xl font-extrabold text-red-600">About Us</h1>
+        </header>
+
+        <!-- Company Information section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-4 border-l-4 border-red-600 pl-4">Who We Are</h2>
+            <p class="leading-relaxed text-lg">
                 We are a team of passionate individuals dedicated to providing exceptional products and services. Our company was founded with the goal of making a positive impact in the lives of our customers and the communities we serve.
             </p>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
-            <p class="text-gray-600 mb-8">
+        </section>
+
+        <!-- Mission section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-4 border-l-4 border-red-600 pl-4">Our Mission</h2>
+            <p class="leading-relaxed text-lg">
                 Our mission is to continuously innovate and deliver high-quality solutions that exceed our customers' expectations. We strive to foster a culture of excellence, integrity, and customer satisfaction.
             </p>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Values</h2>
-            <ul class="list-disc list-inside text-gray-600 mb-8">
+        </section>
+
+        <!-- Values section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold mb-4 border-l-4 border-red-600 pl-4">Our Values</h2>
+            <ul class="list-disc list-inside leading-relaxed text-lg">
                 <li>Customer-centric approach</li>
                 <li>Continuous improvement</li>
                 <li>Ethical business practices</li>
                 <li>Teamwork and collaboration</li>
                 <li>Environmental responsibility</li>
             </ul>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Team</h2>
-            <p class="text-gray-600 mb-8">
+        </section>
+
+        <!-- Team section -->
+        <section>
+            <h2 class="text-3xl font-semibold mb-4 border-l-4 border-red-600 pl-4">Our Team</h2>
+            <p class="leading-relaxed text-lg">
                 Our team is composed of experienced professionals who bring diverse backgrounds and expertise to the table. We foster an environment of learning, creativity, and personal growth, allowing our team members to reach their full potential.
             </p>
-        </div>
+        </section>
+
     </div>
+
 </body>
 </html>
+
 {% endblock %}
 

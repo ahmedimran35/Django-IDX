@@ -1,24 +1,34 @@
 {% extends 'layout.html' %}
 
-    {% block title %} All typer of chai page 
-    {% endblock %}
+{% block title %}
+All types of chai page
+{% endblock %}
 
-    {% block content %}
-    <h1 class="text-center text-red-500 bg-gray-100 m-6">All typer of chai page</h1>
-    
-    <div class="grid grid-cols-4 gap-10 m-4  pt-6">
-    {% for chai in chais %}
-    <div class="bg-blue-100 p-4 rounded-md">
-        <img class="rounded h-48" src="{{ chai.image.url }}" alt="{{ chai.name }}">
-        <h3 class="text-center text-red-500 bg-gray-100 mt-2">{{ chai.name }}</h3>
-        <p>{{ chai.description }}</p>
-        <a href=" {% url 'chai_detail' chai.id %}" target="_blank"> 
-            <button type="button" class="bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-purple-600 text-white mt-2 pb-1 px-6 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">Buy Now</button>
-        </a>
+{% block content %}
+<div class="bg-white text-black">
+    <h1 class="text-center text-xl font-bold pt-4">All types of chai page</h1>
+
+    <div class="grid grid-cols-3 gap-10 ml-10 mr-10 pt-6 pb-4">
+        {% for chai in chais %}
+        <div class="relative flex flex-col mt-6 text-gray-700 bg-gray-100 shadow-md bg-clip-border rounded-xl w-84">
+            <div class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-500 shadow-blue-500/40">
+                <img class="rounded h-full w-full" src="{{ chai.image.url }}" alt="{{ chai.name }}">
+            </div>
+            <div class="p-6">
+                <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                    {{ chai.name }}
+                </h5>
+                <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                    {{ chai.description }}
+                </p>
+            </div>
+            <div class="p-6 pt-0">
+                <a href="{% url 'chai_detail' chai.id %}" target="_blank">
+                    <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/10 hover:shadow-lg hover:shadow-red-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" type="button">Buy Now</button>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
 </div>
-
-
-    {% endblock %}
+{% endblock %}
