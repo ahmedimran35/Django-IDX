@@ -35,12 +35,12 @@ jobs:
 
     - name: Test SSH connection
       run: |
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $HOST_USERNAME@68.183.62.210 "echo 'SSH connection successful'"
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@68.183.62.210 "echo 'SSH connection successful'"
 
     - name: Deploy to VPS
       run: |
-        scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r . $HOST_USERNAME@68.183.62.210:/root/Django
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $HOST_USERNAME@68.183.62.210 "/root/Django/deploy-script.sh"
+        scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r . root@68.183.62.210:/root/Django
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@68.183.62.210 "/root/Django/deploy-script.sh"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         HOST_USERNAME: root
