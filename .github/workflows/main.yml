@@ -26,16 +26,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Add remote host to known_hosts
+      run: |
+        ssh-keyscan -H 68.183.62.210 >> ~/.ssh/known_hosts
+
     - name: Deploy to VPS
       env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         HOST_USERNAME: root
-        HOST_PASSWORD: puNxMV2WqmJpZB9D
-        pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
-        PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib/pkgconfig
-        Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.14/x64
-        Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.14/x64
-        Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.14/x64
-        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
       run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         scp -r . $HOST_USERNAME@68.183.62.210:/root/Django
         ssh $HOST_USERNAME@68.183.62.210 "/root/Django/deploy-script.sh"
