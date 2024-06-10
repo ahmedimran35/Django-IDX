@@ -6,7 +6,6 @@ on:
       - main  # Replace with your desired branch
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
@@ -31,6 +30,12 @@ jobs:
       env:
         HOST_USERNAME: root
         HOST_PASSWORD: puNxMV2WqmJpZB9D
+        pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
+        PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib/pkgconfig
+        Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.14/x64
+        Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.14/x64
+        Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.14/x64
+        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
       run: |
-        scp -r . $HOST_USERNAME@${{ secrets.HOST_IP }}:/root/Django
-        ssh $HOST_USERNAME@${{ secrets.HOST_IP }} "/root/Django/deploy-script.sh"
+        scp -r . $HOST_USERNAME@68.183.62.210:/root/Django
+        ssh $HOST_USERNAME@68.183.62.210 "/root/Django/deploy-script.sh"
