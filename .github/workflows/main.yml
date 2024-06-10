@@ -29,15 +29,18 @@ jobs:
     - name: Prepare SSH keys and known_hosts
       run: |
         mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H 68.183.62.210 >> ~/.ssh/known_hosts
 
+    - name: Test SSH connection
+      run: |
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $HOST_USERNAME@68.183.62.210 "echo 'SSH connection successful'"
+
     - name: Deploy to VPS
+      run: |
+        scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r . $HOST_USERNAME@68.183.62.210:/root/Django
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $HOST_USERNAME@68.183.62.210 "/root/Django/deploy-script.sh"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         HOST_USERNAME: root
-      run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        scp -r . $HOST_USERNAME@68.183.62.210:/root/Django
-        ssh $HOST_USERNAME@68.183.62.210 "/root/Django/deploy-script.sh"
